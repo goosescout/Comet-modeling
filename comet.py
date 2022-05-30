@@ -13,7 +13,7 @@ M = 1.9 * (10 ** 30)
 G = 6.67 * (10 ** (-11))
 
 R_0_DEFAULT = 10 ** 12
-V_0_DEFAULT = 2000
+V_0_DEFAULT = 4000
 ALPHA_DEFAULT = np.pi / 2
 
 prev_point1 = None
@@ -30,6 +30,7 @@ def polar_to_cartesian(rho, theta):
 
 
 def init_plot1():
+    axes.set_aspect('equal', 'box')
     axes.set_title("Comet orbit around the Sun", size=16)
     axes.axis("off")
     axes.plot(x, y, c="#000000")
@@ -44,7 +45,6 @@ def init_plot1():
 
     axes.add_artist(scalebar)
     axes.annotate("Sun", (0, 0), xytext=(-26, 0), textcoords="offset pixels", fontproperties=fontprops)
-    return axes
 
 
 def animate_plot1(i):
